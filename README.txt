@@ -49,9 +49,9 @@ STRUTTURA DEL PROGETTO
                              (Pearson r), rilevamento anomalie con is_suspicious
   TcamouflageTest.py       CamouflageLightStrategy e CamouflageStrongStrategy:
                              simulazione evasione detection e grafico correlazione
-  clientserver.py          Architettura client-server: nonce, timestamp, replay attack,
+  clientServerSim.py       Architettura client-server: nonce, timestamp, replay attack,
                              client-side manipulation, analisi finanziaria aggregata
-  seedattack.py            Seed prediction attack: determinismo PRNG, impatto economico,
+  seedPredictionAttack.py            Seed prediction attack: determinismo PRNG, impatto economico,
                              mitigazione con CSPRNG
 
   -- Moduli di detection delle minacce --
