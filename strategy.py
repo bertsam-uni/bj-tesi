@@ -31,24 +31,10 @@ class AdvancedStrategy:
             if player_value == 9 and dealer_value in [3, 4, 5, 6]:
                 return 'double'
 
-        if self._is_soft_hand(player_hand):
+        if player_hand.is_soft():
             return self._decide_soft(player_value, dealer_value, len(player_hand.cards))
         return self._decide_hard(player_value, dealer_value)
 
-    def _is_soft_hand(self, hand):
-        total = 0
-        aces = 0
-        for card in hand.cards:
-            value = card.value()
-            if isinstance(value, tuple):
-                total += 11
-                aces += 1
-            else:
-                total += value
-        while total > 21 and aces > 0:
-            total -= 10
-            aces -= 1
-        return aces > 0 and total <= 21  # soft = almeno un asso conta ancora come 11
 
     def _decide_hard(self, player_value, dealer_value):
         if player_value >= 17:

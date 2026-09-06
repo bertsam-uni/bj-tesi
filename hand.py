@@ -9,7 +9,7 @@ class Hand:
     def add_card(self, card):
         self.cards.append(card)
 
-    def get_value(self):
+    def _total_and_aces(self):
         total = 0
         aces = 0
         for card in self.cards:
@@ -22,7 +22,16 @@ class Hand:
         while total > 21 and aces > 0:  # aggiusta il valore degli assi se si sballa
             total -= 10
             aces -= 1
+        return total, aces
+
+    def get_value(self):
+        total, _ = self._total_and_aces()
         return total
+
+    def is_soft(self):
+        """True se almeno un Asso è ancora contato come 11 (mano 'morbida')."""
+        total, aces = self._total_and_aces()
+        return aces > 0 and total <= 21
 
     def is_bust(self):
         return self.get_value() > 21
