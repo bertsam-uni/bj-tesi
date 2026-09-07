@@ -1,5 +1,4 @@
 """
-variance_check.py
 Esegue N run indipendenti di AdvancedStrategy vs CardCountingStrategy
 per verificare la stabilita del segno dell'house edge e del ROI
 riportati nel Capitolo 4. Ogni run usa istanze fresche delle strategie.
@@ -66,9 +65,23 @@ summarize("ROI (%)", results_cc, 'roi')
 summarize("Avg True Count", results_cc, 'avg_tc', as_pct=False)
 
 # Quante run su NUM_RUNS mostrano il vantaggio "atteso" (HE negativo, ROI positivo)?
-n_he_negative = sum(1 for x in results_cc['house_edge'] if x < 0)
-n_roi_positive = sum(1 for x in results_cc['roi'] if x > 0)
-n_cc_beats_adv = sum(1 for a, c in zip(results_adv['house_edge'], results_cc['house_edge']) if c < a)
+# Quante run su NUM_RUNS mostrano il vantaggio "atteso" (HE negativo, ROI positivo)?
+n_he_negative = 0
+for x in results_cc['house_edge']:
+    if x < 0:
+        n_he_negative += 1
+
+n_roi_positive = 0
+for x in results_cc['roi']:
+    if x > 0:
+        n_roi_positive += 1 
+
+n_cc_beats_adv = 0
+for i in range(len(results_adv['house_edge'])):
+    a = results_adv['house_edge'][i]
+    c = results_cc['house_edge'][i]
+    if c < a:
+        n_cc_beats_adv += 1
 
 print(f"\nRun con House Edge CardCounting < 0 (vantaggio giocatore): {n_he_negative}/{NUM_RUNS}")
 print(f"Run con ROI CardCounting > 0 (profitto netto):              {n_roi_positive}/{NUM_RUNS}")
