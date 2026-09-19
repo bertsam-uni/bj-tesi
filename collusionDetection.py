@@ -34,17 +34,16 @@ class CollusionDetector:
 
 
 if __name__ == "__main__":
-    import random
     print("=" * 60)
     print("COLLUSION DETECTION - TEST")
     print("=" * 60)
 
     detector = CollusionDetector()
-    base = [random.choice([10, 20, 40, 80]) for _ in range(500)]
+    base = [np.random.choice([10, 20, 40, 80]) for _ in range(500)]
     for i, bet in enumerate(base):
         detector.record_bet("player_A", bet)
-        detector.record_bet("player_B_collude", 90 - bet + random.gauss(0, 5))
-        detector.record_bet("player_C_normal", random.choice([10, 20, 40]))
+        detector.record_bet("player_B_collude", 90 - bet + np.random.gauss(0, 5))
+        detector.record_bet("player_C_normal", np.random.choice([10, 20, 40]))
 
     pairs = [
         ("player_A", "player_B_collude", "collusione"),

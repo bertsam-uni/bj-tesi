@@ -1,11 +1,13 @@
 from montecarlo import MonteCarloSimulator
 from cardCountingStrategy import CardCountingStrategy
 from strategy import AdvancedStrategy
-from scipy.stats import pearsonr
 import numpy as np
 import random
 import matplotlib.pyplot as plt
 from behaviouralProfiler import BehaviouralProfiler
+
+# random.seed(42)      # TODO: fissare per riproducibilità di CamouflageLight/StrongStrategy (usa random.random())
+# np.random.seed(42)   # TODO: fissare per riproducibilità dei tempi di decisione simulati (np.random.normal)
 
 
 # CAMOUFLAGE STRATEGIES (solo estensione necessaria)

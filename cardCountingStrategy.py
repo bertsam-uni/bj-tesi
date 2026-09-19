@@ -1,5 +1,4 @@
 from strategy import AdvancedStrategy
-#from rng import PRNG, CSPRNG
 
 class CardCountingStrategy(AdvancedStrategy):
     def __init__(self, num_decks=6):

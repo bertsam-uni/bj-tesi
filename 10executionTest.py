@@ -65,7 +65,6 @@ summarize("ROI (%)", results_cc, 'roi')
 summarize("Avg True Count", results_cc, 'avg_tc', as_pct=False)
 
 # Quante run su NUM_RUNS mostrano il vantaggio "atteso" (HE negativo, ROI positivo)?
-# Quante run su NUM_RUNS mostrano il vantaggio "atteso" (HE negativo, ROI positivo)?
 n_he_negative = 0
 for x in results_cc['house_edge']:
     if x < 0:

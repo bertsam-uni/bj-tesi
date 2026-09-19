@@ -29,18 +29,17 @@ class BotDetector:
 
 
 if __name__ == "__main__":
-    import random
     print("=" * 60)
     print("BOT DETECTION - TEST")
     print("=" * 60)
 
     bot = BotDetector()
     for _ in range(500):
-        bot.record_action(random.gauss(0.1, 0.01))
+        bot.record_action(np.random.normal(0.1, 0.01))
 
     human = BotDetector()
     for _ in range(500):
-        human.record_action(random.gauss(4.5, 1.2))
+        human.record_action(np.random.normal(4.5, 1.2))
 
     print(f"\n{'Profilo':<10} | {'T_avg':>7} | {'T_var':>7} | {'Bot':>6}")
     print("-" * 40)

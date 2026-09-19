@@ -3,6 +3,9 @@ from cardCountingStrategy import CardCountingStrategy
 from strategy import AdvancedStrategy
 import time
 
+# random.seed(42)  # TODO: fissare per riproducibilità dei risultati citati in tesi (Cap. 4/5)
+
+
 NUM_HANDS = 5_000_000
 
 print("=" * 60)

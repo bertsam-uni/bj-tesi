@@ -1,5 +1,5 @@
 from card import Card
-from rng import PRNG, CSPRNG
+from rng import PRNG
 
 class Deck:
     def __init__(self, num_decks=1, rng=PRNG):  # num_decks: 1 per test, 6 per simulazione realistica

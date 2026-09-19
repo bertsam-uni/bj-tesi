@@ -22,7 +22,7 @@ class MonteCarloSimulator:
 
         game = Game(self.num_decks, rng=self.rng)
 
-        for hand_num in range(num_hands):
+        for _ in range(num_hands):
             # reshuffle a 85% di penetrazione     #PRIMI TEST A 75% #
             if game.deck.cards_remaining() < 0.15 * (52 * self.num_decks):
                 game.deck = Deck(self.num_decks, rng=self.rng)
@@ -30,7 +30,7 @@ class MonteCarloSimulator:
                     self.strategy.reset_count()
 
             base_bet = self.strategy.get_bet_size() if hasattr(self.strategy, 'get_bet_size') else 1
-            bet_history.append(base_bet)
+            bet_history.append(base_bet) #
 
             if hasattr(self.strategy, 'get_true_count'):
                 tc_history.append(self.strategy.get_true_count())

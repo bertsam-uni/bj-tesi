@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 class Card:
-    SUITS = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
-    RANKS = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+    SUITS = ["Hearts", "Diamonds", "Clubs", "Spades"]
+    RANKS = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
 
     def __init__(self, suit: str, rank: str):
         if suit not in self.SUITS:
@@ -13,9 +13,9 @@ class Card:
         self.rank = rank
 
     def value(self):
-        if self.rank in ['J', 'Q', 'K']:
+        if self.rank in ["J", "Q", "K"]:
             return 10
-        elif self.rank == 'A':
+        elif self.rank == "A":
             return (1, 11)
         return int(self.rank)
 
@@ -51,5 +51,3 @@ class Card:
     except ValueError as e:
         print(f"Errore: {e}")  # Errore: Invalid suit
 """
-
-#COUNTING

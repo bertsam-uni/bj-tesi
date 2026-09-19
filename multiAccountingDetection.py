@@ -41,7 +41,6 @@ class MultiAccountingDetector:
         return dist < threshold
 
 if __name__ == "__main__":
-    import random
     print("=" * 60)
     print("MULTI-ACCOUNTING DETECTION - TEST")
     print("=" * 60)
@@ -49,11 +48,11 @@ if __name__ == "__main__":
     detector = MultiAccountingDetector()
 
     for acc in ["account_A", "account_A2"]:
-        dt = [random.gauss(3.2, 0.35) for _ in range(500)]
-        bh = [random.choice([10, 20, 40, 80]) for _ in range(500)]
+        dt = [np.random.normal(3.2, 0.35) for _ in range(500)]
+        bh = [np.random.choice([10, 20, 40, 80]) for _ in range(500)]
         detector.record_session(acc, dt, bh)
 
-    dt = [random.gauss(5.0, 1.5) for _ in range(500)]
+    dt = [np.random.normal(5.0, 1.5) for _ in range(500)]
     bh = [10] * 500
     detector.record_session("account_B", dt, bh)
 

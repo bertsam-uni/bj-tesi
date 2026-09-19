@@ -5,6 +5,9 @@ import numpy as np
 from scipy.stats import pearsonr
 import time
 
+# random.seed(42)  # TODO: fissare per riproducibilità di tabella e grafico di convergenza SE
+
+
 test_sizes = [1000, 10000, 100000, 500000, 1000000, 5000000]
 results_table = []
 

@@ -40,7 +40,7 @@ class Hand:
         return len(self.cards) == 2 and self.get_value() == 21
 
     def has_ace(self):
-        return any(card.rank == 'A' for card in self.cards)
+        return any(card.rank == "A" for card in self.cards)
     
 """test singolo
 Esempio 1: Mano semplice senza Assi
