@@ -6,8 +6,8 @@ import random
 import matplotlib.pyplot as plt
 from behaviouralProfiler import BehaviouralProfiler
 
-# random.seed(42)      # TODO: fissare per riproducibilità di CamouflageLight/StrongStrategy (usa random.random())
-# np.random.seed(42)   # TODO: fissare per riproducibilità dei tempi di decisione simulati (np.random.normal)
+# random.seed(42)      #CamouflageLight/StrongStrategy (usa random.random())
+# np.random.seed(42)   #tempi di decisione simulati (np.random.normal)
 
 
 # CAMOUFLAGE STRATEGIES (solo estensione necessaria)

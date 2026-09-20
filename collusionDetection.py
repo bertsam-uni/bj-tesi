@@ -42,7 +42,7 @@ if __name__ == "__main__":
     base = [np.random.choice([10, 20, 40, 80]) for _ in range(500)]
     for i, bet in enumerate(base):
         detector.record_bet("player_A", bet)
-        detector.record_bet("player_B_collude", 90 - bet + np.random.gauss(0, 5))
+        detector.record_bet("player_B_collude", 90 - bet + np.random.normal(0, 5))
         detector.record_bet("player_C_normal", np.random.choice([10, 20, 40]))
 
     pairs = [
