@@ -9,6 +9,9 @@ from cardCountingStrategy import CardCountingStrategy
 from strategy import AdvancedStrategy
 import statistics
 import time
+import random
+
+#random.seed(42)
 
 NUM_RUNS = 10
 HANDS_PER_RUN = 1_000_000   # ridotto rispetto a 5M per contenere i tempi;
