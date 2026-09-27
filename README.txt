@@ -44,13 +44,22 @@ STRUTTURA DEL PROGETTO
 
   Trun_simulations.py      Confronto AdvancedStrategy vs CardCountingStrategy su 5M mani,
                              validazione con letteratura (Thorp, Griffin, Wong)
+
+  10executionTest.py       10 run indipendenti da 1M mani (AdvancedStrategy vs
+                             CardCountingStrategy) per verificare la stabilità del segno
+                             di house edge e ROI riportata nel Capitolo 4
+
   Tconvergenza.py          Verifica convergenza errore standard (legge 1/√n), plot log-log
+
   behaviouralProfiler.py   BehaviouralProfiler: timing variance, correlazione puntata/TC
                              (Pearson r), rilevamento anomalie con is_suspicious
+
   TcamouflageTest.py       CamouflageLightStrategy e CamouflageStrongStrategy:
                              simulazione evasione detection e grafico correlazione
+
   clientServerSim.py       Architettura client-server: nonce, timestamp, replay attack,
                              client-side manipulation, analisi finanziaria aggregata
+                             
   seedPredictionAttack.py            Seed prediction attack: determinismo PRNG, impatto economico,
                              mitigazione con CSPRNG
 
@@ -93,6 +102,9 @@ ESECUZIONE
 
   Simulazioni principali (5M mani, ~2-3 minuti):
       python Trun_simulations.py
+
+  Verifica stabilità tra run (10 run x 1M mani):
+      python 10executionTest.py
 
   Verifica convergenza Monte Carlo:
       python Tconvergenza.py
