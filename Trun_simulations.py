@@ -4,7 +4,7 @@ from strategy import AdvancedStrategy
 import time
 import random
 
-#random.seed(42)  # TODO: fissare per riproducibilità dei risultati citati in tesi (Cap. 4/5)
+#random.seed(42)  #fissare per riproducibilità dei risultati citati in tesi (Cap. 4/5)
 
 
 NUM_HANDS = 5_000_000

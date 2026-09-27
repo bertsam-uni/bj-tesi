@@ -5,7 +5,7 @@ from deck import Deck
 from rng import PRNG
 from montecarlo import MonteCarloSimulator
 
-# random.seed(42)  # TODO: fissare per riproducibilità dei test
+# random.seed(42)  #fissare per riproducibilità dei test
 
 
 print("=" * 60)
