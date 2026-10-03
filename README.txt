@@ -25,7 +25,6 @@ STRUTTURA DEL PROGETTO
 ----------------------
 
   images/                  Grafici prodotti dalle simulazioni e immagini per la tesi
-  tests/                   File di testing
 
   -- Moduli core --
 
