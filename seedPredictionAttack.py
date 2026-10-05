@@ -74,7 +74,7 @@ print("\n" + "=" * 60)
 print("MITIGAZIONE: CSPRNG")
 print("=" * 60)
 print("\nCon CSPRNG lo stesso 'seed' non produce la stessa sequenza.")
-print("Lo stato interno attinge a /dev/urandom: non riproducibile.")
+print("Lo stato interno attinge all'entropia del sistema operativo")
 
 deck_csp1 = Deck(num_decks=1, rng=CSPRNG)
 deck_csp2 = Deck(num_decks=1, rng=CSPRNG)
