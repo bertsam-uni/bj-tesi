@@ -43,7 +43,6 @@ if __name__ == "__main__":
     import matplotlib
     matplotlib.use("Agg")  # salva su file, non apre finestra
     import matplotlib.pyplot as plt
-    import random
 
     plt.rcParams.update({
         "font.family": "serif",
