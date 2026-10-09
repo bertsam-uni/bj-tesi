@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import pearsonr
 import time
+import os
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
+os.makedirs(OUT, exist_ok=True)
 
 # random.seed(42)  #fissare per riproducibilità di tabella e grafico di convergenza SE
 
@@ -54,9 +57,9 @@ plt.title('Convergenza Standard Error: verifica legge 1/√n', fontsize=14)
 plt.grid(True, alpha=0.3)
 plt.legend(fontsize=11)
 plt.tight_layout()
-plt.savefig('convergenza_se.png', dpi=300)
+plt.savefig(os.path.join(OUT, 'convergenza_se.png'), dpi=300)
 plt.show()
-print("Grafico salvato: convergenza_se.png")
+print("Grafico salvato: images/convergenza_se.png")
 
 log_n = np.log(n_values)
 log_se = np.log(std_errors)
