@@ -43,6 +43,9 @@ if __name__ == "__main__":
     import matplotlib
     matplotlib.use("Agg")  # salva su file, non apre finestra
     import matplotlib.pyplot as plt
+    import os
+    OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
+    os.makedirs(OUT, exist_ok=True)
 
     plt.rcParams.update({
         "font.family": "serif",
@@ -118,7 +121,7 @@ if __name__ == "__main__":
     ax2.set_ylabel("Dimensione puntata (unità)")
     ax2.legend(frameon=False, fontsize=9)
 
-    fig.savefig("images/pearson.png", dpi=300, bbox_inches="tight")
+    fig.savefig(os.path.join(OUT, "pearson.png"), dpi=300, bbox_inches="tight")
     print("Salvato: images/pearson.png")
 
     # -- FIGURA 2: camou.png 
@@ -140,5 +143,7 @@ if __name__ == "__main__":
     ax.set_title("Degradazione della correlazione al crescere del camouflage")
     ax.set_ylim(-0.05, 1.05)
 
-    fig2.savefig("images/camou.png", dpi=300, bbox_inches="tight")
+    fig2.savefig(os.path.join(OUT, "camou.png"), dpi=300, bbox_inches="tight")
     print("Salvato: images/camou.png")
+
+    
